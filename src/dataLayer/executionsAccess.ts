@@ -141,14 +141,14 @@ export class ExecutionItemAccess {
           executionId: executionId,
         },
         UpdateExpression:
-          "set #name = :name, done = :done, dueDate = :dueDate, userId = :userId",
+          "set #name = :name, done = :done, executionDate = :executionDate, userId = :userId",
         ExpressionAttributeNames: {
           "#name": "name",
         },
         ExpressionAttributeValues: {
           ":name": ExecutionUpdate.name,
           ":done": ExecutionUpdate.done,
-          ":dueDate": ExecutionUpdate.dueDate,
+          ":executionDate": ExecutionUpdate.executionDate,
           ":userId": ExecutionUpdate.userId,
         },
       })

@@ -42,7 +42,9 @@ export async function createExecutionItem(
     executionId: itemId,
     userId: userId,
     name: CreateExecutionRequest.name,
-    dueDate: CreateExecutionRequest.dueDate,
+    browserName: CreateExecutionRequest.browserName,
+    headless: CreateExecutionRequest.headless,
+    executionDate: CreateExecutionRequest.executionDate,
     createdAt: new Date().toISOString(),
     done: false,
     attachmentUrl: "",
@@ -59,7 +61,7 @@ export async function updateExecutionItem(
   return await executionsAccess.updateExecutionItem(executionId, {
     userId: userId,
     name: UpdateExecutionRequest.name,
-    dueDate: UpdateExecutionRequest.dueDate,
+    executionDate: UpdateExecutionRequest.executionDate,
     done: UpdateExecutionRequest.done,
   });
 }

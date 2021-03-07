@@ -3,7 +3,9 @@ export interface ExecutionItem {
   executionId: string;
   createdAt: string;
   name: string;
-  dueDate: string;
+  browserName: string;
+  headless: boolean;
+  executionDate: string;
   done: boolean;
   attachmentUrl?: string;
 }

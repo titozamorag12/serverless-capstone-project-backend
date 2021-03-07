@@ -6,8 +6,14 @@
     "name": {
       "type": "string"
     },
-    "dueDate": {
+    "executionDate": {
       "type": "string"
+    },
+    "browserName": {
+      "type": "string"
+    },
+    "headless": {
+      "type": "boolean"
     }
   },
   "required": [

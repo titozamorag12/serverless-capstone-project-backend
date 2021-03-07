@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "a435f63b-a058-4edb-9d0a-482b26b7f399",
+		"name": "Capstone Executions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Executions",
+			"item": [
+				{
+					"name": "Get all executions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/executions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"executions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create execution",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Running today Automated Suite for all clients\",\n    \"browserName\": \"Chrome\",\n    \"headless\": false,\n    \"dueDate\": \"2021-03-15T20:01:45.424Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/executions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"executions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update execution",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"New local executions triggered from Python project automation-project\",\n\t\"done\": true,\n\t\"dueDate\": \"2019-07-29T20:01:45.424Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/executions/4d14386a-6d15-497f-90a8-7e4d77965d21",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"executions",
+								"4d14386a-6d15-497f-90a8-7e4d77965d21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete execution",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer {{authToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/executions/45b2a23d-852b-462f-8022-d9c81ed7630d",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"executions",
+								"45b2a23d-852b-462f-8022-d9c81ed7630d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get attachment URL",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{authToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{baseUrl}}/executions/921b6dd3-1a9f-4652-a908-4b44e719e482/attachment",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"executions",
+								"921b6dd3-1a9f-4652-a908-4b44e719e482",
+								"attachment"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiId",
+			"value": ""
+		},
+		{
+			"key": "authToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Im92OUQ4ZEJua0VUSlJVc1B0cmJKayJ9.eyJpc3MiOiJodHRwczovL2d6YW1vcmEtdWRhY2l0eS1jYXBzdG9uZS51cy5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMTQ1NzY1NzYwMTQ5ODAyMzczNDAiLCJhdWQiOiJkNldFM01zMU5qT3hXc3U1ZDM0bzBzQmtzaDl0UmdQSSIsImlhdCI6MTYxNTA3NTU4MiwiZXhwIjoxNjE1MTMxNTgyLCJhdF9oYXNoIjoiMHhKa2JBdHhWS2VyTjJEQ1FpdXl0dyIsIm5vbmNlIjoid0kwXzY4c0JfMGs4MzJUMVpyOXNMdG5PT1BaTlM3bXEifQ.pIzGuEvgxAg05_FKOgAOLuSaQGexVNmGAVW8vxBhrZ6TEjeO_9NBTjes11fSvfcYx3_aDn-PMEDvrAvOh2QN6OODZnoFOaGWwPuYIbdB7zKMN5Jw_VnUZiM5KntqjUu8AyRKpc92H8op1V3umLxpKq8akjFqolK1lq0TcI9jc4ixAevRjAD7xEezbNx_EduSaSncR32itUmqQk-uF5u6yDnrX0FQExDXO2_n8I-jU0JgMHk_HAIoqILrmsHirhnbItZ7QjVdb4MMAEG1uwPlziOyRzbzGR8D4ZgezD770KO6Kv-iN3NPVvle-_0tClReemL8dpueDOChdSpNPitRTA"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://qa3cnrjref.execute-api.us-east-2.amazonaws.com/dev"
+		}
+	]
+}

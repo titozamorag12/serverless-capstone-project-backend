@@ -3,5 +3,7 @@
  */
 export interface CreateExecutionRequest {
   name: string;
-  dueDate: string;
+  browserName: string;
+  headless: boolean;
+  executionDate: string;
 }
